@@ -1,0 +1,25 @@
+config:
+  target: 'http://localhost:3003'
+  # processor: './randEndpts.js'
+  phases:
+    - duration: 60
+      arrivalRate: 10 #number of users(arriving every second (on average)
+      name: 'warm up application'
+    - duration: 180
+      arrivalRate: 100
+      name: 'max load'
+  variables: 
+    id:
+      - '54'
+      - '543534'
+      - '4'
+      - '7999098'
+      - '689'
+  defaults:
+    headers:
+      x-my-service-auth: '987401838271002188298567'
+scenarios:
+  - flow:
+    # - function: 'generateRandomNum'
+    - get:
+        url: '/api/restaurants/{{ id }}'
