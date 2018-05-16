@@ -6,8 +6,9 @@ npm
 npm-debug.log
 node_modules/
 
-## Webpack generated files ##
-client/dist/bundle.js
+# Compiled files #
+public/services/App.js
+templates/services/App-server.js
 
 pids
 *.pid
