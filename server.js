@@ -33,10 +33,11 @@ const renderComponents = (components, props = {}) => {
   });
 };
 
-app.get('/restaurants/:id', (req, res) => {
-  // res.sendFile(path.join(__dirname, './public/index.html'));
-  // console.log(JSON.stringify(services))
+app.get('/loaderio-', (req, res) => {
+  res.send('loaderio-');
+});
 
+app.get('/restaurants/:id', (req, res) => {
   let components = renderComponents(services, {placeid: req.params.id});
   res.end(Layout(
     'Muncheez',
@@ -46,5 +47,5 @@ app.get('/restaurants/:id', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`server running at: http://localhost:${port}`);
+  console.log(`proxy server running on port: ${port}`);
 });
